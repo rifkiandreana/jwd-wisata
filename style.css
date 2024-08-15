@@ -1,0 +1,300 @@
+body {
+  background-color: aliceblue;
+}
+/* Navbar */
+.navbar {
+  background-color: #f8f9fa;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+}
+
+.logo img {
+  max-height: 50px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 1rem;
+}
+
+.navbar-menu li {
+  margin: 0;
+}
+
+.navbar-menu a {
+  text-decoration: none;
+  color: #343a40;
+  padding: 0.5rem 1rem;
+  display: block;
+}
+
+.navbar-menu a:hover {
+  background-color: #e9ecef;
+  border-radius: 0.25rem;
+}
+
+/* Responsive Design */
+@media (max-width: 668px) {
+  .navbar-menu {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #f8f9fa;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none; /* Start hidden */
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  .navbar-menu a {
+    padding: 0.75rem 1rem; /* Reduced padding for smaller screens */
+    font-size: 0.875rem; /* Smaller font size for mobile */
+    border-top: 1px solid #dee2e6;
+    width: 70%; /* Ensure links take full width */
+    text-align: center; /* Center text in links */
+  }
+
+  .navbar-menu a:first-child {
+    border-top: none;
+  }
+}
+
+/* End Navbar */
+
+/* Home */
+.background {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  background-image: url("img/p-2.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Warna overlay hitam dengan opacity 0.5 */
+  z-index: 1;
+}
+.text {
+  position: relative;
+  font-size: 4em;
+  margin: 0;
+  z-index: 2;
+}
+
+/* About */
+#about {
+  margin-top: 3rem;
+}
+
+.map-container {
+  height: 335px; /* Set a fixed height for map container */
+}
+
+.section-img {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1; /* Make sure the image is behind the content */
+}
+
+@media (max-width: 668px) {
+  .map-container iframe,
+  .video-container iframe {
+    height: 200px; /* Adjust iframe height for mobile screens */
+  }
+}
+
+/* Galeri */
+#galeri {
+  background-color: #0085cd;
+}
+
+.content {
+  display: none;
+}
+.active {
+  display: block;
+}
+.buttons h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Adjust spacing between text and buttons */
+}
+.buttons {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.buttons button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+.buttons #showPhoto {
+  background-color: transparent; /* Blue background */
+}
+.buttons #showVideo {
+  background-color: transparent; /* Green background */
+}
+
+.carousel-item img,
+.carousel-item iframe {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px; /* Sesuaikan dengan lebar yang diinginkan */
+  height: 400px; /* Sesuaikan dengan tinggi yang diinginkan */
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.carousel-inner img {
+  width: 600px; /* Sesuaikan dengan lebar yang diinginkan */
+  height: 600px; /* Sesuaikan dengan tinggi yang diinginkan */
+  object-fit: cover; /* Pastikan gambar menyesuaikan tanpa distorsi */
+  max-width: 80%; /* Menetapkan lebar maksimal gambar dengan margin */
+  max-height: 80%; /* Menetapkan tinggi maksimal gambar dengan margin */
+}
+
+.carousel-item iframe {
+  width: 1100px;
+  height: 600px;
+  border: none; /* Menghapus border default iframe */
+  object-fit: cover; /* Memastikan iframe mengisi container */
+}
+@media (max-width: 768px) {
+  .buttons h1 {
+    flex-direction: column; /* Susun teks dan tombol secara vertikal */
+    gap: 5px; /* Kurangi jarak antar elemen */
+  }
+
+  .buttons button {
+    margin-bottom: 10px; /* Tambahkan margin bawah untuk tombol */
+    margin-right: 0; /* Hapus margin kanan */
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .carousel-item img,
+  .carousel-item iframe {
+    width: 100%; /* Sesuaikan lebar konten dengan layar */
+    height: auto; /* Sesuaikan tinggi konten secara proporsional */
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .carousel-inner img {
+    width: 400px;
+    height: 200px;
+  }
+
+  .carousel-item iframe {
+    width: 400px;
+    height: 200px;
+  }
+}
+
+/* Tiket */
+.scroll1 {
+  max-height: 4.5em; /* Adjust based on line height and desired number of lines */
+  overflow-y: auto;
+}
+
+.bg-card {
+  background-color: aliceblue;
+}
+
+/* Artikel */
+.carousel-caption {
+  position: static;
+  padding: 10px 15px;
+  margin-top: -40px;
+  color: white;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.gambar {
+  width: 400px;
+  height: 200px;
+}
+/* Footer */
+.abc {
+  color: black;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff; /* Optional: Add background color */
+}
+.footer-section {
+  flex: 1 1 200px;
+  margin: 10px;
+  box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
+}
+.footer-section h3 {
+  margin-top: 0;
+}
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+.footer-section a {
+  color: black;
+  text-decoration: none;
+}
+.footer-section a:hover {
+  text-decoration: underline;
+}
+.social-icons a {
+  margin-right: 10px;
+}
